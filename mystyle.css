@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css?family=Rancho&display=swap');
+#dice {
+    width: 100px;
+    height: 100px;
+}
+body {
+    width: 100vw;
+    height: 100vh;
+    background-image: url("vegas.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    line-height: 1.5;
+    font-size: 16px;
+    overflow-x : hidden;
+    overflow-y : hidden;
+}
+.hdln {
+    width: 100%;
+    text-align: center;
+    font-weight: normal;
+    font-family: "Rancho";
+    text-transform : uppercase;
+}
+.hdln--primary {
+    font-size: 5em;
+    margin: 0;
+    animation: redlight 0.3s infinite alternate linear;
+}
+.btn {
+    width: 200px;
+    height: 50px;
+    border: none;
+    border-radius: 5px;
+    font-family : "Rancho";
+}
+.roll__three-d-box--front, .roll__three-d-box--back {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: black;
+    padding: 15px 10px;
+    color: white;
+    pointer-events: none;
+    box-sizing: border-box;
+    text-transform: uppercase;
+}
+.roll--three-d {
+    perspective: 200px;
+    transition: all 0.07s linear;
+    position: relative;
+    cursor: pointer;
+}
+
+.roll {
+    margin-bottom: 100px;
+    min-height : 50px;
+}
+.roll:hover .roll__three-d-box, .roll:focus .roll__three-d-box {
+    transform: translateZ(-25px) rotateX(90deg);
+}
+.roll__three-d-box {
+    transition: all 0.3s ease-out;
+    transform: translateZ(-25px);
+    transform-style: preserve-3d;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.roll__three-d-box--front {
+    transform: rotatex(0deg) translatez(25px);
+}
+.roll__three-d-box--back {
+    transform: rotatex(-90deg) translatez(14px);
+    background-color: #c0392b !important;
+}
+/*# sourceMappingURL=application.css.map */
+@keyframes redlight {
+    from {
+        color: red;
+   }
+    to {
+        color: black;
+   }
+}
+* {
+  box-sizing: border-box;
+}
+
+.row {
+  display: flex;
+}
+
+/* Create 2 equal columns that sits next to each other */
+.column {
+  flex: 50%;
+  padding: 10px;
+}

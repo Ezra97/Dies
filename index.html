@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="mystyle.css"/>
+    <script type="text/javascript">
+        var lastIndex = 0;
+
+        function randomImage()
+        {
+            var theImage1 = document.getElementById('myImage1');
+            var theImage2 = document.getElementById('myImage2');
+            var imgArray = new Array('di2.png', 'di3.png', 'di4.png', 'di5.png', 'di6.png','di1.png');
+            var imgIndex1 = 0, imgIndex2 = 0;
+            if (imgArray.length > 1)
+            {
+                while (imgIndex1 == lastIndex)
+                {
+                    imgIndex1 = Math.floor(Math.random() * imgArray.length);
+                    imgIndex2 = Math.floor(Math.random() * imgArray.length);
+                }
+                theImage1.src = imgArray[imgIndex1];
+                theImage2.src = imgArray[imgIndex2];
+            }
+            else
+                return false;
+        }
+    </script>
+    <title>Page Title</title>
+</head>
+<body>
+    <h1 class="hdln hdln--primary">Casino</h1>
+    <label class="btn roll roll--three-d" for="andicator" onclick="randomImage()">
+  <span aria-hidden="true" class="roll__three-d-box" >
+    <span class="roll__three-d-box--front" >test your chance</span>
+    <span class="roll__three-d-box--back a" >click to roll</span>
+  </span>
+</label>
+    <br />
+    <div class="row">
+      <div class="column">
+        <img src="di1.png" alt="dice1" id="myImage1"/>
+      </div>
+    <div class="column">
+        <img src="di2.png" alt="dice2" id="myImage2"/>
+    </div>
+  </div>
+</body>
+</html>
